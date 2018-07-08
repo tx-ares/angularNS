@@ -1,5 +1,10 @@
-<StackLayout>
-    <Label text="Tap the button" class="title"></Label>
-    <Button text="TAP" (tap)="onTap()"></Button>
-    <Label [text]="message" class="message" textWrap="true"></Label>
-</StackLayout>
+<ActionBar title="Person List">
+    <ActionItem text="Create" (tap)="create()" ios.position="right"></ActionItem>
+</ActionBar>
+<GridLayout>
+    <ListView [items]="personList">
+        <template let-item="item">
+            <Label [text]="item.firstName + ' ' + item.lastName"></Label>
+        </template>
+    </ListView>
+</GridLayout>
